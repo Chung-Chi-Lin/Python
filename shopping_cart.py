@@ -4,17 +4,20 @@
 products = []
 prices = []
 
-product = input("請輸入想買的產品:")
-price = input(f"請輸入 { product }價格:")
+# 無窮迴圈(記得設置 break)
+while True:
+    product = input("請輸入想購買的物品:")
+    if product.lower() == "q":
+        break
 
-products.append(product)
-prices.append(price)
+    price = float(input(f"請輸入 {product} 的價格:"))
+    products.append(product)
+    prices.append(price)
 
-find_product = input("請輸入要查詢的產品")
+print("商品", products)
+print("價格", prices)
 
-if find_product in products:
-    index = products.find(find_product)
-    if :
-    print(f"有找到您的商品,價格是{}")
-else:
-    print("沒有找到對應的商品")
+# enumerate 列出列表索引與參數
+
+for index, product in enumerate(products):
+    print(f"第{index+1} 個商品為 {product}, 價格為{int(prices[index])}")
